@@ -6,7 +6,7 @@ from flask.json import JSONEncoder
 from sqlalchemy import create_engine, text
 from datetime import datetime, timedelta
 from functools import wraps
-from flask_cors import CORS
+#from flask_cors import CORS
 
 
 ## Default JSON encoder는 set를 JSON으로 변환할 수 없다.
@@ -152,7 +152,8 @@ def login_required(f):
 def create_app(test_config=None):
     app = Flask(__name__)
 
-    CORS(app)
+    print(app.config.items())
+    #CORS(app)
 
     app.json_encoder = CustomJSONEncoder
 
